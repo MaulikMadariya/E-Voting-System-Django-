@@ -1,0 +1,161 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #home{
+            background-color: lightsalmon;
+            height: 40px;
+            margin-left: 5px;
+            margin-right: 5px;
+            border-top-right-radius: 25px;
+            border-top-left-radius: 25px;
+            text-align: center;
+            color: white;
+            font-size:25px;
+            padding-top: 8px;
+            margin-bottom: 5px;
+            text-decoration: underline;
+        }
+        #xyz{
+            padding-top: 5px;
+              
+            height: 555px;
+             border-radius: 30px;
+        }
+        #dvi2{
+            padding-top: 50px;
+            height: 448px;
+            background-color: lightcoral;
+            margin-left: 5px;
+            margin-right: 5px;
+            border-bottom-right-radius: 25px;
+            border-bottom-left-radius: 25px;
+        }
+        #table{
+            align-items: center ;
+            height: 400px;
+            width: 500px;
+            border-radius: 30px;
+            background-color:lightgray;
+            margin-left: 33%;
+            text-align: center;
+            padding-top: 30px;
+        }
+        #btn{
+            width: 200px;
+            height: 30px;
+            border-radius: 20px;
+            margin-right: 10px;
+            background-color:coral;
+            border-color: white ;
+            color: white;
+            border-style: solid;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        #btn:hover{
+            background-color: orangered;
+        }
+        #tdbtn{
+            padding-left: 15px;
+        }
+        #txt{
+            width: 300px;
+            height: 25px;
+            border-radius: 10px;
+        }
+        #txt1{
+            text-align: left;
+            padding-left: 10px;
+            font-size: 20px;
+        }
+        #mass
+        {
+            width: 300px;
+            float: right;
+            border-radius: 5px;
+            background-color: #99ff99;
+        }
+        #a{
+            text-align: end;
+            padding-right: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="xyz">
+        <div id="home"> LOGIN PAGE</div>
+       <div id="dvi2">
+        <div id="mass">
+            
+        
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            <table border="0" id="table">
+                
+                <tr>
+                    <td id="txt1">Phone Number</td>
+                    <td><input type="number" id="txt" name="number"/></td> 
+                </tr>
+                <tr>
+                    <td id="txt1">Addhar Number</td>
+                    <td><input type="text" id="txt" name="aadhar"/></td>    
+                </tr>
+                
+                <tr>
+                   
+                    <td id="txt1">Password</td>
+                    <td><input type="password" id="txt" name="password"/></td>
+                </tr>
+                
+                <tr>
+                    <td id="txt1">Confirm Password</td>
+                    <td><input type="password" id="txt" name="cpassword"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2" id="tdbtn"><input type="submit" id="btn" name="submit" value="Login"/><input type="reset" name="reset" id="btn" value="reset"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2" id="a"><a href="registration.html">If  You Have Not Ragiser ?</a></td>
+                </tr>
+               </table>
+            </form>
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
+    {% if messages != none %}
+    {% if abc == "error" %}
+    {% for i in messages %}
+        <script>
+            swal({
+                title: "Info !",
+                text: '{{i}}',
+                icon: "warning",
+                });
+         </script>
+    {% endfor %}
+    {% else %}
+    {% for i in messages %}
+        <script>
+            swal({
+                title: "Info !",
+                text: '{{i}}',
+                icon: "warning",
+                });
+         </script>
+    {% endfor %}
+   {% endif %}
+   {% endif %}
+       </div>
+    </div>
+</body>
+</html>
+{% endblock %}

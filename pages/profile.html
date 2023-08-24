@@ -1,0 +1,181 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #home{
+            background-color: lightsalmon;
+            height: 40px;
+            margin-left: 5px;
+            margin-right: 5px;
+            border-top-right-radius: 25px;
+            border-top-left-radius: 25px;
+            text-align: center;
+            color: white;
+            font-size:25px;
+            padding-top: 8px;
+            margin-bottom: 5px;
+            text-decoration: underline;
+            padding-left: 275px;
+            
+        }
+        #xyz{
+            padding-top: 5px;
+              
+            height: 555px;
+             border-radius: 30px;
+        }
+        #dvi2{
+            height: 497px;
+            background-color: lightcoral;
+            margin-left: 5px;
+            margin-right: 5px;
+            border-bottom-right-radius: 25px;
+            border-bottom-left-radius: 25px;
+            overflow:scroll;
+            overflow-x: hidden;
+            overflow-y: auto;
+            
+        }
+        #table
+        {
+            width: 50%;
+            height: 477px;
+            margin-left: 385px;
+            background-color: lightyellow;
+            border-radius: 30px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            
+        }
+        #tr{
+            border-bottom: 1px solid black;
+            font-size: 20px;
+            text-align: left;
+            padding-left: 50px;
+            
+        }
+        #tr1{
+            border-bottom: 1px solid black;
+            font-size: 22px;
+            text-align: left;
+            padding-left: 150px;
+            padding-right: 0px;
+            width: 250px;
+        }
+        #tr2
+        {
+            text-align: center;
+        }
+        #btn{
+            width: 200px;
+            height: 30px;
+            border-radius: 20px;
+            margin-right: 10px;
+            background-color:coral;
+            border-color: white ;
+            color: white;
+            border-style: solid;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        #btn:hover{
+            background-color: orangered;
+        }
+        #user{
+            float: right;
+            color: white;
+            padding-right: 20px;
+            font-size: 20px;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="xyz">
+        <div id="user">WELCOME {{b}}..</div>
+        
+            <div id="home"> PROFILE      PAGE</div>
+            
+        <div id="dvi2">
+        <form action="edit_profile.html">
+
+            {% csrf_token %}
+        <table  id="table">
+            <tr>
+                <th id="tr1"> Id</th>
+                <td id="tr">{{a}}</td>
+            </tr>
+            <tr>
+                <th id="tr1"> First Name</th>
+                <td id="tr">{{ b}}</td>
+            </tr>
+            <tr>
+                <th id="tr1"> Last Name</th>
+                <td id="tr">{{ c}}</td>
+            </tr>
+            <tr>
+                <th id="tr1">Password</th>
+                <td id="tr">{{ d}}</td>
+            </tr>
+            <tr>
+                <th id="tr1"> CPassword</th>
+                <td id="tr">{{ e}}</td>
+            </tr>
+            <tr>
+                <th id="tr1">Address</th>
+                <td id="tr">{{f }}</td>
+            </tr>
+            <tr>
+                <th id="tr1"> Number</th>
+                <td id="tr">{{ g}}</td>
+            </tr>
+            <tr>
+                <th id="tr1"> Email</th>
+                <td id="tr">{{ h}}</td>
+            </tr>
+            <tr>
+                <th id="tr1"> Pan Number</th>
+                <td id="tr">{{ j}}</td>
+            </tr>
+            <tr>
+                <th id="tr1"> Aadhar Number</th>
+                <td id="tr">{{ k}}</td>
+            </tr>
+            <tr>    
+                <th id="tr1"> Vote State</th>
+                <td id="tr">{{ m}}</td>
+            </tr>
+            <tr>
+                <td id="tr2" colspan="2"><input type="submit" id="btn" value="Edit" /></td>
+            </tr>
+        </table>
+    </form>
+    
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
+    {% if messages != none %}
+    {% if msg1 != "true" %}
+    {% for i in messages %}
+        <script>
+            swal({
+                title: "Good job!",
+                text: '{{i}}',
+                icon: "success",
+                });
+         </script>
+    {% endfor %}
+    {% endif %}
+   {% endif %}
+       </div>
+    </div>
+</body>
+</html>
+{% endblock %}

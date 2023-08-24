@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <style>
+        #div12{
+            width: 100%;
+            height: 100px;
+            background-color:lightgray;
+            border-bottom-right-radius: 30px;
+            margin-bottom: 5px;
+            
+        }
+        #div1{
+            float: left;
+            background-color: lightcoral;
+            width: 51%;
+            color: white;
+            height: 90px;
+            text-align: center;
+            padding-top: 10px;
+            font-size: 60px;
+            margin-bottom: 5px;
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+            
+        }
+        #div2{
+            
+            float: right;
+            background-color:lightsalmon;
+            width: 45%;
+            height: 62px;
+            text-align: center;
+            padding-top: 3px;
+            font-size: 20px;
+            margin-bottom: 5px;
+            border-bottom-right-radius: 50px;
+            border-bottom-left-radius: 50px;
+            border-color: white;
+            border-style: solid;
+            border-top: none;
+            
+        
+            padding-top: 30px;
+            margin-right: 10px;
+            font-size: 22px;
+            
+        }
+        #div3{
+            background-color: lightgrey;
+            height: 560px;
+            width: 100%;
+            margin-bottom: 5px;
+            border-bottom-right-radius: 50px;
+            border-bottom-left-radius: 50px;
+            border-radius:30px;
+            
+            
+        }
+        #div4{
+            background-color: lightgray;
+            height:67px;
+            padding-left: 0px;
+            
+            font-size: 20px;
+            text-align: center;
+            color: darkslategray;
+            font-size: 21px;
+            border-top-left-radius: 30px;
+           
+            
+        }
+        #lk{
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        #lk:hover{
+            color: black;
+        }
+        #d1{
+                background-color: lightsalmon;
+                float: left;
+                margin-left: 10px;
+                height: 40px;
+                border-color: white;
+                border-style: solid;
+                border-top-left-radius: 30px;
+                border-top-right-radius: 30px;
+                width: 500px;
+                color: white;
+            padding-top: 20px;  
+        margin-top: 4px;     }
+        #d2
+        {
+            background-color: lightcoral;
+            float: right;
+            border-top-left-radius: 50px;
+                border-bottom-left-radius: 50px;
+                color: white;
+                height: 45px;
+                padding-top: 20px;
+                width: 400px;
+
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="div12">
+        <div id = "div1">
+            <b>E   &nbsp;&nbsp;-&nbsp;&nbsp;   V o t i n g &nbsp;&nbsp;  S y s t e m</b>
+        </div>
+        <div id="div2">
+                <a href="profile.html" id="lk">Profile</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="vote.html" id="lk">Vote</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="party.html" id="lk">Party</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="result.html" id="lk">Result</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="feedback.html" id="lk">feedback</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="logout.html" id="lk">Logout</a>
+        </div>
+    </div>
+    <div id="div3">
+        {% block content %}
+        
+
+        {% endblock %}
+    </div>
+    <div id="div4">
+        <div id="d1">
+            This Website is Haveing &copy; and E-voting system&TRADE; 
+        </div>
+        <div id="d2">      Madariya Maulik B.</div>
+    </div>
+    
+</body>
+</html>
+
+
+
+
+

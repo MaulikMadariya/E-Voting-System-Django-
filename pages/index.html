@@ -1,0 +1,133 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #home{
+            background-color: lightsalmon;
+            height: 40px;
+            margin-left: 5px;
+            margin-right: 5px;
+            border-top-right-radius: 25px;
+            border-top-left-radius: 25px;
+            text-align: center;
+            color: white;
+            font-size:25px;
+            padding-top: 8px;
+            margin-bottom: 5px;
+            
+        }
+        #xyz{
+            padding-top: 5px;
+              
+            height: 555px;
+             border-radius: 30px;
+        }
+        #dvi2{
+            height: 455px;
+            background-color: lightcoral;
+            margin-left: 5px;
+            margin-right: 5px;
+            border-bottom-right-radius: 25px;
+            border-bottom-left-radius: 25px;
+            padding: 20px;
+            text-decoration: underline;
+            overflow: scroll;
+            overflow-x: hidden;
+        }
+        #one{
+            background-color: lightyellow;
+            height: auto;
+            margin-bottom: 10px;
+            width: 48%;
+            margin-right: 10px;
+            float: right;
+        }
+        #two{
+            float: left;
+            background-color: black;
+            width: 150px;
+            height: 150px;
+            margin-right: 10px;
+        }
+        #btn1{
+            border-radius: 10px;           
+            margin-right: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border: 1px black solid;
+            
+            
+            float: inline-end;
+            background-color:coral;
+            
+            color: white;
+            border-style: solid;
+            
+            text-decoration: none;
+            cursor: pointer;
+        }
+        #btn1:hover{
+            background-color: orangered;
+        }
+        #ch{
+            display: none;
+        }
+        #ch:checked ~ #content{
+            display: block;
+        }
+        #ch:checked ~ label{
+            display: none;
+        }
+        label{
+            display: inline-block;
+        }
+        #content{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="xyz">
+        <div id="home"> HOME PAGE</div>
+       <div id="dvi2">
+        
+        <div id="one">
+            <div id="two">
+                
+            </div>
+            <div>
+                <input type="checkbox" id="ch" />
+                The e-Voting platform aims to improve transparency and Corporate Governance standards and also helpsThe e-Voting platform aims to improve transparency and Corporate Governance standards and also helpsThe e-Voting platform aims to improve transparency and Corporate Governance standards and also helpsThe e-Voting platform aims 
+                <div id="content"> Additionally investors are also benefited where they can cast their votes on till last day from the comfort of their home / office, while eliminating the chances of their votes being declared invalid.to improve transparency and Corporate Governance standards and also helpsThe e-Voting platform aims to improve transparency and Corporate Governance standards and also helpsThe e-Voting platform aims to improve transparency and Corporate Governance standards and also helpsThe e-Voting platform aims to improve transparency and Corporate Governance standards and also helpsThe e-Voting platform aims to improve transparency and Corporate Governance standards and also helps
+                   <br> <label for="ch" id="btn1">Read less</label>    
+                </div>
+                    <br><label for="ch" id="btn1">Read More</label>
+                </div>
+        </div>
+        <!-- <div id="one">
+            <div id="two">
+                
+            </div>
+            <div>
+                <input type="checkbox" id="ch2" />
+                The e-Voting platform aims to improve transparency and Corporate Governance standards and also helpsThe e-Voting platform aims to improve transparency and Corporate Governance standards and also helpsThe e-Voting platform aims to improve transparency and Corporate Governance standards and also helpsThe e-Voting platform aims 
+                <div id="content"> Additionally investors are also benefited where they can cast their votes on till last day from the comfort of their home / office, while eliminating the chances of their votes being declared invalid.to improve transparency and Corporate Governance standards and also helpsThe e-Voting platform aims to improve transparency and Corporate Governance standards and also helpsThe e-Voting platform aims to improve transparency and Corporate Governance standards and also helpsThe e-Voting platform aims to improve transparency and Corporate Governance standards and also helpsThe e-Voting platform aims to improve transparency and Corporate Governance standards and also helps
+                   <br> <label for="ch" id="btn1">Read less</label>    
+                </div>
+                    <br><label for="ch" id="btn1">Read More</label>
+                </div>
+        </div> -->
+       
+       </div>
+    </div>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,178 @@
+
+
+{% extends 'base.html' %}
+
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #home{
+            background-color: lightsalmon;
+            height: 40px;
+            margin-left: 5px;
+            margin-right: 5px;
+            border-top-right-radius: 25px;
+            border-top-left-radius: 25px;
+            text-align: center;
+            color: white;
+            font-size:25px;
+            padding-top: 8px;
+            margin-bottom: 5px;
+            text-decoration: underline;
+            padding-left: 275px;
+        }
+        #xyz{
+            padding-top: 5px;
+              
+            height: 555px;
+             border-radius: 30px;
+        }
+        #dvi2{
+            height: 497px;
+            background-color: lightcoral;
+            margin-left: 5px;
+            margin-right: 5px;
+            border-bottom-right-radius: 25px;
+            border-bottom-left-radius: 25px;
+            overflow:scroll;
+            overflow-x: hidden;
+            overflow-y: auto;
+            
+        }
+        #table
+        {
+            width: 95%;
+            margin-left: 35px;
+            background-color: lightyellow;
+            border-radius: 30px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        #tr{
+            border-top: 2px solid black;
+            font-size: 20px;
+            text-align: center;
+            padding-left: 40px;
+            
+        }
+        #tr1{
+            font-size: 22px;
+            text-align: center;
+            padding-left: 40px;
+        }
+        #btn{
+            width: 200px;
+            height: 30px;
+            border-radius: 20px;
+            margin-right: 10px;
+            background-color:coral;
+            border-color: black ;
+            color: white;
+            border-style: solid;
+            font-size: 15px;
+            
+            
+        }
+        #btn1{
+            border-radius: 20px;           
+            margin-right: 10px;
+            padding-left: 60px;
+            padding-right: 60px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            background-color:coral;
+            border-color: black ;
+            color: white;
+            border-style: solid;
+            font-size: 17px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        #btn1:hover{
+            background-color: orangered;
+        }
+        #user{
+            float: right;
+            color: white;
+            padding-right: 20px;
+            font-size: 20px;
+            padding-top: 10px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="xyz">
+        <div id="user">WELCOME {{b}}..</div>
+        <div id="home"> VOTE      PAGE</div>
+       <div id="dvi2">
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+       
+        {% if messages != none %}
+        
+            {% if pa == "success" %}
+                {% for i in messages %}
+                <script>
+                swal({
+                    title: "Good job!",
+                    text: '{{i}}',
+                    icon: "success",
+                    });
+                    </script>
+                {% endfor %}
+            {% else %}
+                {% for i in messages %}
+                <script>
+                
+                swal({
+                    title: "INFO!",
+                    text: 'YOU CAN VOTE ONLY ONE TIME !',
+                    icon: "info",
+                    })
+                .then((value) => {
+                    swal({
+                        title: "ALERT!",
+                        text: '{{i}}',
+                        icon: "error",
+                        });
+                });
+                </script>
+                {% endfor %}
+            {% endif %}
+        {% endif %}
+        <form action="update_vote" >
+
+            
+        <table  id="table">
+            <tr>
+                <th id="tr1">Party Id</th>
+                <th id="tr1">Party Image</th>
+                <th id="tr1">Party Name</th>
+                <th id="tr1">Vote</th>
+            
+            </tr>
+            {% for i in party %}
+            <tr>
+                <input type="hidden"  name="v" value="{{i.pid}}"/>
+                <td id="tr">{{i.pid}}</td>
+                <td id="tr"><img src="{{ i.image.url }}" alt=""  height="100px" width="100px"/></td>
+                <td id="tr">{{ i.name}}</td>
+                
+                <!-- <td id="tr"><input type="submit" id="btn" name="submit"  value="Vote"/></td> -->
+                <td id="tr"><a href="update_vote?id={{i.pid}}" id="btn1">Vote</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </form>
+       </div>
+    </div>
+   
+</body>
+</html>
+{% endblock %}
